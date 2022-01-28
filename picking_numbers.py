@@ -11,7 +11,7 @@ def picking_numbers(a: list[int]) -> int:
 
 
 def main():
-    print(picking_numbers([1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 5]))
+    print(picking_numbers([10, 10, 10, 10, 4, 4, 3, 2, 2, 9, 9, 9, 8]))
 
 
 if __name__ == "__main__":
