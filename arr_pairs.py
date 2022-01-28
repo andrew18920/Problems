@@ -1,21 +1,21 @@
 def pair_sum(a: list, k: int) -> list:
-    hashmap = {}
+    k_diff = {}
     pairs = set()
     for item in a:
-        hashmap[item] = k - item
-        if k - item in hashmap:
+        k_diff[item] = k - item
+        if k - item in k_diff:
             pairs.add((item, k - item))
     return pairs
 
 
 def pair_diff(a: list, diff: int) -> list:
-    hashmap = {}
+    item_diff = {}
     pairs = set()
     for item in a:
-        hashmap[item] = item - diff
-        if item - diff in hashmap:
+        item_diff[item] = item - diff
+        if item - diff in item_diff:
             pairs.add((item, item - diff))
-        if item + diff in hashmap:
+        if item + diff in item_diff:
             pairs.add((item, item + diff))
     return pairs
 
