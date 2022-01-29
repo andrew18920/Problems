@@ -14,11 +14,16 @@ class Booking:
 
 
 bookings = [
-    Booking("Andrew", 19, 4),
-    Booking("Steven", 17, 3),
-    Booking("Grace", 13, 2),
-    Booking("Gerald", 13, 2),
-    Booking("Katie", 13, 6),
+    Booking("Rebecca A", 13, 6),
+    Booking("Rebecca B", 13, 2),
+    Booking("Stiller", 20, 5),
+    Booking("Lauren", 18, 2),
+    Booking("Gabi", 18, 7),
+    Booking("Gavin", 18, 2),
+    Booking("Monia", 19, 4),
+    Booking("Kevin", 18, 4),
+    Booking("Steven", 19, 2),
+    Booking("Amy", 14, 2),
 ]
 
 tables = {
@@ -73,9 +78,9 @@ for (name, time, people) in bookings:
         unsuccessful_bookings.append((name, time, people))
         print(
             f"{name}, {time}:00, {people}pp.\n\
-                At this time, tables {', '.join(poss_if_avail)} are taken.\n\
-                The restaurant is unable to accommodate this reservation; \
-                please choose a different time."
+At this time, tables {', '.join(poss_if_avail)} are taken.\n\
+The restaurant is unable to accommodate this reservation; \
+please choose a different time."
         )
 
 bookings_by_time = {}
