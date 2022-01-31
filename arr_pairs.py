@@ -1,4 +1,4 @@
-def pair_sum(a: list, k: int) -> list[tuple[int, int]]:
+def pair_sum(a: list[int], k: int) -> list[tuple[int, int]]:
     k_diff = {}
     pairs = set()
     for item in a:
@@ -8,7 +8,7 @@ def pair_sum(a: list, k: int) -> list[tuple[int, int]]:
     return pairs
 
 
-def pair_diff(a: list, diff: int) -> list[tuple[int, int]]:
+def pair_diff(a: list[int], diff: int) -> list[tuple[int, int]]:
     item_diff = {}
     pairs = set()
     for item in a:
