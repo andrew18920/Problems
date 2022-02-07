@@ -1,4 +1,5 @@
 from math import ceil, sqrt
+import timeit
 
 
 def encryption(s: str) -> str:
@@ -18,6 +19,16 @@ def main():
     print(f"{encryption('chillout') = }")
     print(
         f"{encryption('if man was meant to stay on the ground god would have given us roots') = }"
+    )
+    print(
+        "encryption('haveaniceday') =",
+        max(
+            timeit.repeat(
+                stmt="encryption('haveaniceday')",
+                setup="from __main__ import encryption",
+                number=100_000,
+            )
+        ),
     )
 
 
