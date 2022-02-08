@@ -69,12 +69,11 @@ for (name, time, people) in bookings:
         if time < finish_time
     }
 
-    poss = [tb for tb in find_tables(people) if available(tb)]
-    if poss:
+    if poss := [tb for tb in find_tables(people) if available(tb)]:
         successful_bookings[poss[0]].append(Booking(name, time, people))
         taken_tables[poss[0]] = time + booking_length
     else:
-        poss_if_avail = [tb for tb in find_tables(people)]
+        poss_if_avail = list(find_tables(people))
         unsuccessful_bookings.append((name, time, people))
         print(
             f"{name}, {time}:00, {people}pp.\n\
@@ -86,7 +85,7 @@ please choose a different time."
 bookings_by_time = {}
 for table, li in successful_bookings.items():
     for booking in li:
-        if booking.time in bookings_by_time.keys():
+        if booking.time in bookings_by_time:
             bookings_by_time[booking.time].append((table, booking.name, booking.people))
         else:
             bookings_by_time[booking.time] = [(table, booking.name, booking.people)]
