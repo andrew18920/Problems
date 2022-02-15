@@ -1,5 +1,5 @@
 def check_brackets(s: str) -> bool:
-    brackets = {"]": "[", "}": "{", ")": "("}
+    brackets = {"]": "[", "}": "{", ")": "(", ">": "<"}
     found = []
     for ch in s:
         if ch in brackets.values():
@@ -13,9 +13,9 @@ def check_brackets(s: str) -> bool:
 
 
 def main():
-    print(f"{check_brackets('()') = }")
+    print(f"{check_brackets('<()>') = }")
     print(f"{check_brackets('[') = }")
-    print(f"{check_brackets('()[]{}') = }")
+    print(f"{check_brackets('()[]{}<>') = }")
     print(f"{check_brackets('(]') = }")
     print(f"{check_brackets('([)]') = }")
 
