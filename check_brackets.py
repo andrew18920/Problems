@@ -1,18 +1,14 @@
 def check_brackets(s: str) -> bool:
+    brackets = {"]": "[", "}": "{", ")": "("}
     found = []
     for ch in s:
-        expected = found[-1] if found else None
-        if ch in "({[":
+        if ch in brackets.values():
             found.append(ch)
-        elif ch in ")}]":
-            if found and (
-                (ch == ")" and expected == "(")
-                or (ch == "]" and expected == "[")
-                or (ch == "}" and expected == "{")
-            ):
-                found.pop()
-            else:
+        elif ch in brackets:
+            if not found or brackets[ch] != found.pop():
                 return False
+        else:
+            return False
     return not found
 
 
