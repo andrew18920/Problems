@@ -1,4 +1,4 @@
-def isPalindrome(x: int) -> bool:
+def is_palindrome(x: int) -> bool:
     rev = 0
     n = x
     while x > 0:
@@ -9,10 +9,10 @@ def isPalindrome(x: int) -> bool:
 
 
 def main():
-    print(f"{isPalindrome(121) = }")
-    print(f"{isPalindrome(-121) = }")
-    print(f"{isPalindrome(10) = }")
-    print(f"{isPalindrome(101) = }")
+    print(f"{is_palindrome(121) = }")
+    print(f"{is_palindrome(-121) = }")
+    print(f"{is_palindrome(10) = }")
+    print(f"{is_palindrome(101) = }")
 
 
 if __name__ == "__main__":
