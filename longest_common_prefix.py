@@ -3,10 +3,7 @@ def longest_common_prefix(strs: list) -> str:
         return ""
     strs.sort()
     a, b = strs[0], strs[-1]
-    for i, ch in enumerate(a):
-        if b[i] != ch:
-            return a[:i]
-    return a
+    return next((a[:i] for i, ch in enumerate(a) if b[i] != ch), a)
 
 
 def main():
