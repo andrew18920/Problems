@@ -1,5 +1,7 @@
 # group digits and count them, output like: 'two 3s, three 2s, one 5, one 1s' (23321511)
 def count_digits(n: str) -> str:
+    if not n:
+        return ""
     prev = n[0]
     groups = []
     curr_group = [prev]
@@ -15,6 +17,8 @@ def count_digits(n: str) -> str:
 
 
 def main():
+    print(f"{count_digits('') = }")
+    print(f"{count_digits('1') = }")
     print(f"{count_digits('3322251') = }")
     print(f"{count_digits('1234') = }")
     print(f"{count_digits('8'*50+'3'*32) = }")
