@@ -16,16 +16,16 @@ class IntegerToRoman {
 
     public static void main(String[] args) {
         IntegerToRoman solve = new IntegerToRoman();
-        String[] solutions = {
+        String[] results = {
                 String.format("solve.intToRoman(1234) = '%s'", solve.intToRoman(1234)),
-                String.format("solve.intToRoman(1234) = '%s'", solve.intToRoman(12)),
-                String.format("solve.intToRoman(1234) = '%s'", solve.intToRoman(0)),
-                String.format("solve.intToRoman(1234) = '%s'", solve.intToRoman(1927)),
-                String.format("solve.intToRoman(1234) = '%s'", solve.intToRoman(3049)),
+                String.format("solve.intToRoman(12) = '%s'", solve.intToRoman(12)),
+                String.format("solve.intToRoman(0) = '%s'", solve.intToRoman(0)),
+                String.format("solve.intToRoman(1927) = '%s'", solve.intToRoman(1927)),
+                String.format("solve.intToRoman(3049) = '%s'", solve.intToRoman(3049)),
         };
 
-        for (String solution : solutions) {
-            System.out.println(solution);
+        for (String s : results) {
+            System.out.println(s);
         }
     }
 }
