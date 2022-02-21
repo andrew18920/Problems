@@ -1,6 +1,6 @@
-var pair_sum = function (a, k) {
-    k_diff = {}
-    pairs = new Set();
+var pair_sum = (a: number[], k: number): Set<number[]> => {
+    let k_diff = {}
+    let pairs: Set<number[]> = new Set();
     a.forEach(item => {
         k_diff[item] = k - item;
         if (k - item in k_diff) {
@@ -10,9 +10,9 @@ var pair_sum = function (a, k) {
     return pairs;
 };
 
-var pair_diff = function (a, diff) {
-    item_diff = {}
-    pairs = new Set();
+var pair_diff = (a: number[], diff: number): Set<string> => {
+    let item_diff = {}
+    let pairs: Set<string> = new Set();
     a.forEach(item => {
         item_diff[item] = item - diff;
         if (item - diff in item_diff) {

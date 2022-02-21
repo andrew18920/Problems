@@ -1,12 +1,15 @@
 class ListNode {
-    constructor(val, next) {
-        this.val = (val === undefined ? 0 : val);
-        this.next = (next === undefined ? null : next);
+    val: number;
+    next: ListNode;
+
+    constructor(val = 0, next: ListNode = null) {
+        this.val = val;
+        this.next = next;
     }
 
     printList() {
         var out = [];
-        var curr = this;
+        var curr: ListNode = this;
         while (curr != null) {
             out.push(curr.val);
             curr = curr.next;
@@ -15,9 +18,9 @@ class ListNode {
     }
 }
 
-var listToLinkedList = function (li) {
-    var start = new ListNode(li[0]);
-    c = start;
+var listToLinkedList = (li: number[]) => {
+    const start = new ListNode(li[0]);
+    let c = start;
     li.slice(1).forEach(v => {
         c.next = new ListNode(v)
         c = c.next
@@ -25,15 +28,15 @@ var listToLinkedList = function (li) {
     return start
 }
 
-var addTwoNumbers = function (l1, l2) {
-    var start = new ListNode(0);
-    var [p, q, curr] = [l1, l2, start];
-    var carry = 0;
+var addTwoNumbers = (l1: ListNode, l2: ListNode) => {
+    const start = new ListNode(0);
+    let [p, q, curr] = [l1, l2, start];
+    let carry = 0;
     while (p !== null || q !== null) {
-        var x = (p !== null ? p.val : 0);
-        var y = (q !== null ? q.val : 0);
-        var addition = x + y + carry;
-        var carry = Math.floor(addition / 10);
+        let x = (p !== null ? p.val : 0);
+        let y = (q !== null ? q.val : 0);
+        let addition = x + y + carry;
+        carry = Math.floor(addition / 10);
         curr.next = new ListNode(addition % 10);
         curr = curr.next;
         if (p != null) {
