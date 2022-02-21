@@ -20,13 +20,11 @@ const maxArea = (height: number[]): number => {
   return level;
 };
 
-const run = [
+[
   [1, 8, 6, 2, 5, 4, 8, 3, 7],
   [1, 1],
   [3, 4, 56, 1],
   [0, 1, 2, 0, 4, 1],
-];
-
-run.forEach((s) => {
+].forEach((s) => {
   console.log(`maxArea([${s}]) = ${maxArea(s)}`);
 });

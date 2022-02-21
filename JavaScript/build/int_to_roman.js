@@ -11,13 +11,6 @@ const intToRoman = (num) => {
     }
     return output.join('');
 };
-const results = [
-    `int_to_roman(1234) = '${intToRoman(1234)}'`,
-    `int_to_roman(12) = '${intToRoman(12)}'`,
-    `int_to_roman(0) = '${intToRoman(0)}'`,
-    `int_to_roman(1927) = '${intToRoman(1927)}'`,
-    `int_to_roman(3049) = '${intToRoman(3049)}'`,
-];
-results.forEach((s) => {
-    console.log(s);
+[1234, 12, 0, 1927, 3049].forEach((s) => {
+    console.log(`intToRoman(${s}) = ${intToRoman(s)}`);
 });
