@@ -4,8 +4,8 @@ class ListNode {
         this.next = next;
     }
     printList() {
-        var out = [];
-        var curr = this;
+        const out = [];
+        let curr = this;
         while (curr != null) {
             out.push(curr.val);
             curr = curr.next;
@@ -13,23 +13,23 @@ class ListNode {
         return out.toString();
     }
 }
-var listToLinkedList = (li) => {
+const listToLinkedList = (li) => {
     const start = new ListNode(li[0]);
     let c = start;
-    li.slice(1).forEach(v => {
+    li.slice(1).forEach((v) => {
         c.next = new ListNode(v);
         c = c.next;
     });
     return start;
 };
-var addTwoNumbers = (l1, l2) => {
+const addTwoNumbers = (l1, l2) => {
     const start = new ListNode(0);
     let [p, q, curr] = [l1, l2, start];
     let carry = 0;
     while (p !== null || q !== null) {
-        let x = (p !== null ? p.val : 0);
-        let y = (q !== null ? q.val : 0);
-        let addition = x + y + carry;
+        const x = p !== null ? p.val : 0;
+        const y = q !== null ? q.val : 0;
+        const addition = x + y + carry;
         carry = Math.floor(addition / 10);
         curr.next = new ListNode(addition % 10);
         curr = curr.next;
