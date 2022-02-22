@@ -1,23 +1,23 @@
 const pairSum = (a, k) => {
-    const kDiff = {};
+    const kDiff = new Map();
     const pairs = new Set();
     a.forEach((item) => {
-        kDiff[item] = k - item;
-        if (k - item in kDiff) {
+        kDiff.set(item, k - item);
+        if (kDiff.has(k - item)) {
             pairs.add([item, k - item]);
         }
     });
     return pairs;
 };
 const pairDiff = (a, diff) => {
-    const itemDiff = {};
+    const itemDiff = new Map();
     const pairs = new Set();
     a.forEach((item) => {
-        itemDiff[item] = item - diff;
-        if (item - diff in itemDiff) {
+        itemDiff.set(item, item - diff);
+        if (itemDiff.has(item - diff)) {
             pairs.add(`${item}, ${item - diff}`);
         }
-        if (item + diff in itemDiff) {
+        if (itemDiff.has(item + diff)) {
             pairs.add(`${item}, ${item + diff}`);
         }
     });

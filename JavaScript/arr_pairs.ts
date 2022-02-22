@@ -1,9 +1,9 @@
 const pairSum = (a: number[], k: number): Set<number[]> => {
-  const kDiff = {};
-  const pairs: Set<number[]> = new Set();
+  const kDiff = new Map<number, number>();
+  const pairs = new Set<number[]>();
   a.forEach((item) => {
-    kDiff[item] = k - item;
-    if (k - item in kDiff) {
+    kDiff.set(item, k - item);
+    if (kDiff.has(k - item)) {
       pairs.add([item, k - item]);
     }
   });
@@ -11,14 +11,14 @@ const pairSum = (a: number[], k: number): Set<number[]> => {
 };
 
 const pairDiff = (a: number[], diff: number): Set<string> => {
-  const itemDiff = {};
-  const pairs: Set<string> = new Set();
+  const itemDiff = new Map<number, number>();
+  const pairs = new Set<string>();
   a.forEach((item) => {
-    itemDiff[item] = item - diff;
-    if (item - diff in itemDiff) {
+    itemDiff.set(item, item - diff);
+    if (itemDiff.has(item - diff)) {
       pairs.add(`${item}, ${item - diff}`);
     }
-    if (item + diff in itemDiff) {
+    if (itemDiff.has(item + diff)) {
       pairs.add(`${item}, ${item + diff}`);
     }
   });
