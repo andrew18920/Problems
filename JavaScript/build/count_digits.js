@@ -16,11 +16,11 @@ const countDigits = (n) => {
         prev = digit;
     });
     groups.push(currGroup);
-    const out = [];
+    let out = '';
     groups.forEach((group) => {
-        out.push(`${group.length}${group[0]}`);
+        out += `${group.length}${group[0]}`;
     });
-    return out.join('');
+    return out;
 };
 ['', '1', '3322251', '1234'].forEach((s) => {
     console.log(`countDigits(${s}) = ${countDigits(s)}`);
