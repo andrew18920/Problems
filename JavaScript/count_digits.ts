@@ -1,9 +1,9 @@
-const countDigits = (n: string): string => {
+const countDigits = (n: string) => {
   if (n === '') {
     return '';
   }
   let prev = n[0];
-  const groups: Array<string>[] = [];
+  const groups: string[][] = [];
   let currGroup = [prev];
   [...n].slice(1).forEach((digit) => {
     if (digit === prev) {
