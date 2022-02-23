@@ -17,7 +17,6 @@ All the given intervals are unique.
 
 def remove_covered_intervals(intervals: list[list[int]]) -> int:
     intervals.sort(key=lambda x: (x[0], -x[1]))
-    print(intervals)
 
     count = 1
     prevRight = intervals[0][1]
