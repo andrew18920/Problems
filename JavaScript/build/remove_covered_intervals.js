@@ -12,9 +12,6 @@ Constraints:
 intervals[i].length == 2
 0 <= li <= ri <= 105
 All the given intervals are unique.
-
-[[1,4],[3,6],[2,8]]
-[[1,4],[2,3]]
 */
 const removeCoveredIntervals = (intervals) => {
     intervals.sort((a, b) => a[0] - b[0] || b[1] - a[1]);
