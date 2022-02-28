@@ -14,9 +14,9 @@ def encryption(s: str) -> str:
 
 
 def main():
-    print(f"{encryption('haveaniceday') = }")
-    print(f"{encryption('feedthedog    ') = }")
-    print(f"{encryption('chillout') = }")
+    print(f"{encryption('have a nice day') = }")
+    print(f"{encryption('feed the dog      ') = }")
+    print(f"{encryption('chill out') = }")
     print(
         f"{encryption('if man was meant to stay on the ground god would have given us roots') = }"
     )
